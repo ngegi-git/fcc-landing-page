@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product Landing Page</title>
+  </head>
+  <body id="home">
+    <div class="container" id="header">
+      <nav class="menu" id="nav-bar">
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="brand">
+          <h1 style="margin-left: 45px">Landing Page</h1>
+        </div>
+        <ul class="menu-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact Us</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div class="header">
+        <div class="gede">
+          <img src="image/logo.jpg" alt="header-img" id="header-img" style="border-radius: 50%; vertical-align: middle; width: 100px; height: 100px" />
+          <h1 class="heading">Landing Page</h1>
+          <p class="sub-heading"><strong>Orchid flower shop with good quality and affordable price</strong></p>
+        </div>
+        <div class="foto kecil1">
+          <h4 class="price">Purple Moon Orchid</h4>
+          <p class="item">Ready</p>
+        </div>
+        <div class="foto kecil2">
+          <h4 class="price">White Moon Orchid</h4>
+          <p class="item">Ready</p>
+        </div>
+      </div>
+
+      <section class="video">
+        <iframe style="z-index: -1" id="video" width="560" height="450" src="http://instagram.com/p/CKSXEPMFnuz/embed" title="Instagram video player" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
+      </section>
+
+      <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="service">
+          <div class="icon"><i class="fa fa-gift"></i></div>
+          <h3>Gift</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum delectus et suscipit aliquam magnam architecto ut aut saepe voluptatum dolores.</p>
+        </div>
+        <div class="service">
+          <div class="icon"><i class="fa fa-pagelines"></i></div>
+          <h3>Decoration</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum delectus et suscipit aliquam magnam architecto ut aut saepe voluptatum dolores.</p>
+        </div>
+        <div class="service">
+          <div class="icon"><i class="fa fa-leaf"></i></div>
+          <h3>Hobbies</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum delectus et suscipit aliquam magnam architecto ut aut saepe voluptatum dolores.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://www.freecodecamp.com/email-submit" id="form">
+          <input type="email" name="email" id="email" placeholder="Please enter your email address" />
+          <input type="submit" id="submit" />
+        </form>
+      </section>
+
+      <section class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <img src="https://source.unsplash.com/random/201x201" alt="" />
+        <img src="https://source.unsplash.com/random/202x202" alt="" />
+        <img src="https://source.unsplash.com/random/203x203" alt="" />
+        <img src="https://source.unsplash.com/random/204x204" alt="" />
+        <img src="https://source.unsplash.com/random/205x205" alt="" />
+        <img src="https://source.unsplash.com/random/206x206" alt="" />
+        <img src="https://source.unsplash.com/random/207x207" alt="" />
+        <img src="https://source.unsplash.com/random/207x208" alt="" />
+      </section>
+    </div>
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav ul');
+      const span = document.querySelectorAll('.menu-toggle span');
+
+      menuToggle.addEventListener('click', function () {
+        nav.classList.toggle('slide');
+        span.forEach((s) => {
+          s.classList.toggle('slide');
+        });
+      });
+    </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

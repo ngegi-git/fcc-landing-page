@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ddd;
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: Noto Sans JP, arial, sans-serif;
+  margin: 50px;
+  height: 1600px;
+}
+
+img {
+  width: 100%;
+}
+
+#nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Bagian container */
+.container {
+  display: grid;
+  gap: 20px;
+}
+
+/* Bagian Navigasi */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: black;
+}
+
+.menu .brand {
+  color: white;
+  font-size: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+  font-size: 15px;
+  padding: 5px;
+  text-transform: uppercase;
+  width: 100px;
+}
+
+/* Menu Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: relative;
+  margin: 10px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 27px;
+  height: 4px;
+  background: orangered;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle input {
+  display: none;
+  position: absolute;
+  background-color: orangered;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Menu Hamburger Animasi */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+span:nth-child(2).slide {
+  background-color: #fff;
+  transform: rotate(45deg) translate(-1px, -1px);
+  z-index: 99;
+}
+
+span:nth-child(4).slide {
+  background-color: #fff;
+  transform: rotate(-45deg) translate(-1px, 0);
+  z-index: 99;
+}
+
+span:nth-child(3).slide {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Bagian Header */
+.header {
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+    'kecil1 gede gede'
+    'kecil2 gede gede';
+}
+
+.gede {
+  grid-area: gede;
+  min-height: 300px;
+  background-image: url(image/kombinasi.jpg);
+  background-size: auto;
+  background-position: center;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.gede > * {
+  display: none;
+}
+
+.foto {
+  background: #000;
+  color: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: default;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.kecil1 {
+  grid-area: kecil1;
+  background-image: url(image/ungu.jpg);
+  background-size: auto;
+  background-position: center;
+  margin-top: 20px;
+}
+
+.kecil2 {
+  grid-area: kecil2;
+  background-image: url(image/putih.jpg);
+  background-size: auto;
+  background-position: center;
+}
+
+.foto .price {
+  font-weight: 100;
+  font-size: 3em;
+}
+
+.contact input {
+  display: block;
+  margin: auto;
+}
+
+.contact {
+  order: 5;
+  margin-top: 10px;
+}
+
+.contact input[type='email'] {
+  width: 500px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.contact input[type='submit'] {
+  margin: 10px auto;
+  width: 200px;
+  height: 50px;
+  background-color: orangered;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.contact h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Bagian Services */
+.services {
+  order: 4;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.services h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.service {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon {
+  font-size: 3em;
+}
+
+.service p {
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+/* Bagian Gallery */
+.gallery {
+  order: 6;
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Bagian video */
+.video {
+  order: 3;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  z-index: -1;
+}
+
+/* Media query */
+@media (max-width: 1024px) {
+  .menu {
+    grid-template-columns: 1fr;
+    order: 1;
+  }
+  .menu .brand {
+    display: none;
+  }
+
+  .gede > * {
+    display: block;
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .gede img {
+    background-color: transparent;
+    width: 100px;
+  }
+
+  .gede {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 1fr;
+    order: -1;
+    justify-items: end;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 50vh;
+    top: 0;
+    background-color: orangered;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  .menu ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    margin: 0;
+  }
+  .header {
+    grid-template-areas:
+      'gede'
+      'kecil1'
+      'kecil2';
+  }
+  .gede,
+  .kecil1 {
+    margin-top: 0;
+  }
+}
